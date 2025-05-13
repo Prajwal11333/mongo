@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/quiz.css">
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main id="quiz-content">
+        <section class="quiz-container">
+            <div class="container">
+                <div class="quiz-card">
+                    <div class="quiz-header">
+                        <h2>Sign Language Quiz</h2>
+                        <p>Show the sign for the displayed prompt</p>
+                    </div>
+
+                    <div class="quiz-prompt">
+                        <h3>Please sign: <span id="current-prompt">Loading...</span></h3>
+                    </div>
+
+                    <div class="webcam-container">
+                        <div class="webcam-wrapper">
+                            <video id="webcam" autoplay playsinline></video>
+                            <canvas id="canvas" style="display: none;"></canvas>
+                            <div class="webcam-overlay">
+                                <div id="countdown" class="countdown"></div>
+                                <div id="feedback" class="feedback"></div>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <button id="start-quiz" class="btn primary-btn">Start Quiz</button>
+                            <button id="submit-sign" class="btn secondary-btn" disabled>Submit Sign</button>
+                            <button id="next-question" class="btn primary-btn" style="display: none;">Next Question</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-progress">
+                        <div class="progress-text">Question <span id="current-question">1</span> of <span id="total-questions">5</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-indicator" style="width: 20%"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-results" style="display: none;">
+                        <h3>Quiz Results</h3>
+                        <div class="results-summary">
+                            <div class="score">
+                                <span id="score">0</span>/<span id="max-score">5</span>
+                            </div>
+                            <div class="message" id="result-message">Keep practicing!</div>
+                        </div>
+                        <button id="restart-quiz" class="btn primary-btn">Try Again</button>
+                        <a href="/tutorials" class="btn secondary-btn">Back to Tutorials</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+    <script src="/js/quiz.js"></script>
+</body>
+
+</html>

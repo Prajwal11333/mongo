@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+
+    <main id="home-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to EduSign</h1>
+                <p>Making sign language Learning accessible for children ages 2-15</p>
+                <div class="hero-buttons">
+                    <a href="/tutorials" class="btn primary-btn">Start Learning</a>
+                    <a href="/translate" class="btn secondary-btn">start translation</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose EduSign?</h2>
+                <div class="feature-cards">
+                    <div class="feature-card" id="feature-interactive">
+                        <div class="icon">👋</div>
+                        <h3>Interactive Learning</h3>
+                        <p>Engaging activities designed specifically for children</p>
+                    </div>
+                    <div class="feature-card" id="feature-personalized">
+                        <div class="icon">👤</div>
+                        <h3>Personalized Progress</h3>
+                        <p>Track learning journey with customized dashboards</p>
+                    </div>
+                    <div class="feature-card" id="feature-community">
+                        <div class="icon">👨‍👩‍👧‍👦</div>
+                        <h3>Supportive Community</h3>
+                        <p>Connect with other families and educators</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="age-groups">
+            <div class="container">
+                <h2>Learning Paths by Age</h2>
+                <div class="age-group-cards">
+                    <div class="age-card" id="age-0-5">
+                        <h3>Ages 2-5</h3>
+                        <p>Foundational sign language through play and images</p>
+                        <a href="/tutorials?age=0-5" class="age-link">Explore</a>
+                    </div>
+                    <div class="age-card" id="age-6-10">
+                        <h3>Ages 6-10</h3>
+                        <p>Building vocabulary and simple conversations</p>
+                        <a href="/tutorials?age=6-10" class="age-link">Explore</a>
+                    </div>
+                    <div class="age-card" id="age-11-15">
+                        <h3>Ages 11-15</h3>
+                        <p>Advanced concepts and everyday communication</p>
+                        <a href="/tutorials?age=11-15" class="age-link">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Families Say</h2>
+                <div class="testimonial-slider" id="testimonial-carousel">
+                    <div class="testimonial">
+                        <p>"EduSign has transformed how my child engages with language learning."</p>
+                        <div class="testimonial-author">- Parent of a 7-year-old</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The interactive lessons keep my kids engaged while they learn valuable skills."</p>
+                        <div class="testimonial-author">- Parent of twins, age 10</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"As an educator, I appreciate the structured approach and quality resources."</p>
+                        <div class="testimonial-author">- Special Education Teacher</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Start?</h2>
+                <p>Join thousands of families empowering their children through sign language</p>
+                <a href="/login" class="btn primary-btn" id="home-signup-btn">Create Free Account</a>
+            </div>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+    
+
+
+    
+</body>
+</html>

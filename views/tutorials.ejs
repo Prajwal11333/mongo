@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+
+    <main id="tutorials-content">
+        <section class="tutorials-hero">
+            <div class="container">
+                <h1>Sign Language Tutorials</h1>
+                <p>Browse our collection of age-appropriate sign language lessons</p>
+            </div>
+        </section>
+
+        <section class="tutorial-filters">
+            <div class="container">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="age-filter">Age Group:</label>
+                        <select id="age-filter" name="age-filter">
+                            <option value="all">All Ages</option>
+                            <option value="0-5">Ages 2-5</option>
+                            <option value="6-10">Ages 6-10</option>
+                            <option value="11-15">Ages 11-15</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="category-filter">Category:</label>
+                        <select id="category-filter" name="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="alphabet">Alphabet</option>
+                            <option value="numbers">Numbers</option>
+                            <option value="family">Family</option>
+                            <option value="emotions">Emotions</option>
+                            <option value="food">Food</option>
+                            <option value="animals">Animals</option>
+                            <option value="daily">Daily Activities</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="difficulty-filter">Difficulty:</label>
+                        <select id="difficulty-filter" name="difficulty-filter">
+                            <option value="all">All Levels</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <button id="apply-filters-btn" class="btn primary-btn">Apply Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="tutorial-list">
+            <div class="container">
+                <div class="tutorials-grid" id="tutorials-container">
+                    <div class="tutorial-card" id="tutorial-1">
+                        <div class="tutorial-thumbnail">
+                            <img src="/assets/imgs/tutorialbasic.jpg" alt=" Basics">
+                        </div>
+                        <div class="tutorial-info">
+                            <span class="tutorial-level beginner">Beginner</span>
+                            <span class="tutorial-age">Ages 2-5</span>
+                            <h3> Basics</h3>
+                            <p>Learn the foundational hand signs for the alphabet</p>
+                            <div class="tutorial-meta">
+                                <span><i class="fa fa-clock"></i> 15 minutes</span>
+                                <span><i class="fa fa-video"></i> 3 videos</span>
+                            </div>
+                            <a href="/tutorials/basics" class="btn secondary-btn">Start Learning</a>
+                        </div>
+                    </div>
+
+                    <div class="tutorial-card" id="tutorial-2">
+                        <div class="tutorial-thumbnail">
+                            <img src="/assets/imgs/tutorialfamily.jpg" alt="Family Signs">
+                        </div>
+                        <div class="tutorial-info">
+                            <span class="tutorial-level beginner">Beginner</span>
+                            <span class="tutorial-age">Ages 6-10</span>
+                            <h3>Family Signs</h3>
+                            <p>Learn how to sign family members and relationships</p>
+                            <div class="tutorial-meta">
+                                <span><i class="fa fa-clock"></i> 4 minutes</span>
+                                <span><i class="fa fa-video"></i> 1 videos</span>
+                            </div>
+                            <a href="/tutorials/family-signs" class="btn secondary-btn">Start Learning</a>
+                        </div>
+                    </div>
+
+                    <div class="tutorial-card" id="tutorial-3">
+                        <div class="tutorial-thumbnail">
+                            <img src="/assets/imgs/tutorialemotions.jpg" alt="Emotions and Expressions">
+                        </div>
+                        <div class="tutorial-info">
+                            <span class="tutorial-level intermediate">Intermediate</span>
+                            <span class="tutorial-age">Ages 11-15</span>
+                            <h3>Emotions and Expressions</h3>
+                            <p>Learn how to communicate feelings and emotions</p>
+                            <div class="tutorial-meta">
+                                <span><i class="fa fa-clock"></i> 5 minutes</span>
+                                <span><i class="fa fa-video"></i> 1 videos</span>
+                            </div>
+                            <a href="/tutorials/emotions-expressions" class="btn secondary-btn">Start Learning</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination" id="tutorials-pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn next">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+    <script src="/js/tutorials.js"></script>
+</body>
+</html>

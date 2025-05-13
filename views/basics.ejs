@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/css/style2.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+        <body>
+            <div class="main">
+                <% if(locals.videos){ %>
+                <div class="anchor">
+                    <video width="900" height="480" controls>
+                            <source src="<%= videos.video %>" type="video/mp4">
+                        </video>
+                        <h2>
+                            <%= videos.title %>
+                        </h2>
+                        <div class="video-actions">
+                            <a href="/tutorials/quiz/basics" class="btn primary-btn">Take Quiz</a>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="basic">
+                    <div class="section-1">
+                        <h2 class="h2">Section 1 </h2>
+                    </div>
+                    <div class="clicksection1" class="Introduction">
+                        <ul class="Introdropdown1" type="none">
+                            <li class="common" data-id="001">
+                                <input type="checkbox">
+                                <span>Introduction</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section-2">
+                        <h2 class="h2">Section 2-Numbers </h2>
+                    </div>
+                    <div class="clicksection2">
+                        <ul class="Introdropdown2" type="none">
+                            <li class="common" data-id="002" class="alphabets">
+                                <input type="checkbox">
+                                <span>Numbers</span>
+                            </li>
+                            <li class="common">
+                                <input type="checkbox">
+                                <span>quizze-1</quizze-1></span>
+                            </li>
+                            <li class="common">
+                                <input type="checkbox">
+                                <span >quizze-2</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section-3">
+                        <h2 class="h2">Section 3 -Alphabets </h2>
+                    </div>
+                    <div class="clicksection3">
+
+                        <ul class="Introdropdown3" type="none">
+                            <li class="common" data-id="003" >
+                                <input type="checkbox">
+                                <span>Alphabets</span>
+                            </li>
+                            <li class="common">
+                                <input type="checkbox">
+                                <span>quizze-1</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <%- include('./partials/footer') %>
+            <script type="module" src="/js/basics.js">
+            </script>
+            
+
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/css/style2.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+        <div class="main">
+            <% if(locals.videos){ %>
+                <div class="anchor">
+                    <video width="800" height="480" controls>
+                        <source src="<%= videos.video %>" type="video/mp4">
+                    </video>
+                    <h2>
+                        <%= videos.title %>
+                    </h2>
+                </div>
+                <% } %>
+                    <div class="basic">
+                        <div class="section-1">
+                            <h2 class="h2">Section 1 - Basic Emotions and Expressions</h2>
+                        </div>
+                        <div class="clicksection1">
+                            <ul class="Introdropdown1" type="none">
+                                <li class="common" data-id="005">
+                                    <input type="checkbox">
+                                    <span>Emotions Introduction</span>
+                                </li>
+                                <li class="common">
+                                    <input type="checkbox">
+                                    <span>Emotions Introduction</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+        </div>
+        <%- include('./partials/footer') %>
+            <script>
+                $(".Introdropdown1,.Introdropdown2,.Introdropdown3").hide();
+                $(".section-1").on("click", function () {
+                    $(".Introdropdown1").toggle();
+                });
+                $(".section-2").on("click", function () {
+                    $(".Introdropdown2").toggle();
+                });
+                $(".section-3").on("click", function () {
+                    $(".Introdropdown3").toggle();
+                });
+
+                $(document).ready(function () {
+                    $(".common").on("click", function () {
+                        const videoId = $(this).data("id");
+
+                        $.ajax({
+                            url: `/tutorials/emotions-expressions/${videoId}`,
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function (data) {
+                                // Update video source and title
+                                $(".anchor video source").attr("src", data.videos.video);
+                                $(".anchor h2").text(data.videos.title);
+
+                                // Important: Need to reload the video element after changing source
+                                $(".anchor video")[0].load();
+                                $(".anchor video")[0].play();
+                            },
+                            error: function (err) {
+                                console.error("Error loading video:", err);
+                            }
+                        });
+                    });
+                });
+            </script>
+</body>
+
+</html>

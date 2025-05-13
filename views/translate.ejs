@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/translate.css">
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main id="translate-content">
+        <section class="translate-hero">
+            <div class="container">
+                <h1>Sign Language Translator</h1>
+                <p>Translate basic sign language gestures into different languages</p>
+            </div>
+        </section>
+
+        <section class="translator-container">
+            <div class="container">
+                <div class="translator-card">
+                    <div class="translator-header">
+                        <h2>Sign Language Translator</h2>
+                        <p>Make one of these signs: <strong>Hello, Thanks, Yes</strong></p>
+                    </div>
+
+                    <div class="input-output-container">
+                        <div class="webcam-container">
+                            <div class="webcam-wrapper">
+                                <video id="webcam" autoplay playsinline></video>
+                                <canvas id="canvas" style="display: none;"></canvas>
+                                <div class="webcam-overlay">
+                                    <div id="countdown" class="countdown"></div>
+                                    <div id="recording-indicator" class="recording-indicator">Recording...</div>
+                                </div>
+                            </div>
+                            <div class="controls">
+                                <button id="start-camera" class="btn primary-btn">Start Camera</button>
+                                <button id="start-translate" class="btn secondary-btn" disabled>Translate Sign</button>
+                                <button id="stop-translate" class="btn danger-btn" style="display: none;">Stop</button>
+                            </div>
+                        </div>
+                        
+                        <div class="translation-result">
+                            <div class="language-selector">
+                                <label for="target-language">Translate to:</label>
+                                <select id="target-language" class="language-dropdown">
+                                    <option value="en">English</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="kn">Kannada</option>
+                                    <option value="te">Telugu</option>
+                                </select>
+                            </div>
+                            
+                            <div class="result-display">
+                                <div class="detected-sign">
+                                    <h3>Detected Sign:</h3>
+                                    <div id="detected-sign" class="result-text">---</div>
+                                    <div id="confidence-level" class="confidence-level"></div>
+                                </div>
+                                
+                                <div class="translated-text">
+                                    <h3>Translation:</h3>
+                                    <div id="translation-result" class="result-text translation">---</div>
+                                </div>
+                            </div>
+                            
+                            <div class="translation-history">
+                                <h3>Recent Translations</h3>
+                                <ul id="history-list" class="history-list">
+                                    <!-- Translation history will be added here dynamically -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="translation-info">
+                        <div class="info-card">
+                            <h3>How to Use</h3>
+                            <ol>
+                                <li>Click "Start Camera" to activate your webcam</li>
+                                <li>Select your target language from the dropdown</li>
+                                <li>Click "Translate Sign" and make one of the supported gestures</li>
+                                <li>Hold the gesture for a few seconds for better accuracy</li>
+                                <li>View the detected sign and its translation</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Supported Signs</h3>
+                            <div class="supported-signs">
+                                <div class="sign-item">
+                                    <img src="/assets/imgs/signs/hello.jpg" alt="Hello sign">
+                                    <p>Hello</p>
+                                </div>
+                                <div class="sign-item">
+                                    <img src="/assets/imgs/signs/thanks.jpg" alt="Thanks sign">
+                                    <p>Thanks</p>
+                                </div>
+                                <div class="sign-item">
+                                    <img src="/assets/imgs/signs/yes.jpg" alt="Yes sign">
+                                    <p>Yes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+    <script src="/js/translate.js"></script>
+</body>
+
+</html>

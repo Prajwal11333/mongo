@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <%- include('./partials/head') %>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #5970f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .about-us {
+            
+            text-align: center;
+            padding: 90px 20px ;
+            background: linear-gradient(135deg, #cbbee7 0%, #ededed 100%);
+        }
+
+        .about-us h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-us h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #4a90e2;
+            margin: 10px auto;
+        }
+
+        .about-us p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .team-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 30px);
+            max-width: 400px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 80%;
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #4a90e2, #5cb85c);
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #f4f4f4;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+            border-color: #4a90e2;
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card .role {
+            font-size: 1.2rem;
+            color: #4a90e2;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .card .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .card .skills span {
+            background-color: #f4f4f4;
+            color: #555;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .card .contribution {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .card:nth-child(odd)::before {
+            background: linear-gradient(90deg, #4a90e2, #5cb85c);
+        }
+
+        .card:nth-child(even)::before {
+            background: linear-gradient(90deg, #f3826f, #ffb347);
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <section class="about-us">
+        <h1>About Us</h1>
+        <p>Meet the talented individuals behind our project</p>
+        <div class="team-cards">
+            <!-- Team Member 1 -->
+            <div class="card">
+                <img src="/assets/imgs/amith.jpg" alt="Amith K M">
+                <h2>Amith K M</h2>
+                <p class="role">AI Developer</p>
+                <div class="skills">
+                    <span>Python</span>
+                    <span>NLP</span>
+                    <span>Computer Vision</span>
+                    <span>NumPy</span>
+                </div>
+                <p class="contribution">Amith is responsible for training Machine learning models and ensuring a seamless user experience.</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="card">
+                <img src="/assets/imgs/adarsh.jpg" alt="Adarsh K R">
+                <h2>Adarsh K R</h2>
+                <p class="role">Web Developer</p>
+                <div class="skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Node.js</span>
+                    <span>Next.js</span>
+                </div>
+                <p class="contribution">Adarsh handles the server-side logic and database management with impressive website smooth flow of website.</p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="card">
+                <img src="/assets/imgs/prajwal.jpg" alt="Prajwal K">
+                <h2>Prajwal K</h2>
+                <p class="role">Web Developer</p>
+                <div class="skills">
+                    <span>Tailwind CSS</span>
+                    <span>TypeScript</span>
+                    <span>Node.js</span>
+                    <span>React.js</span>
+                    <span>Mongo DB</span>
+                </div>
+                <p class="contribution">Prajwal K designs the user interfaces and enhances dynamic fetching data which ensures the website is visually appealing and user-friendly.</p>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="card">
+                <img src="/assets/imgs/chandana.jpeg" alt="chandana">
+                <h2>Chandana.N.M</h2>
+                <p class="role">Video Content Creator</p>
+                <div class="skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Animation creator</span>
+                    <span>UI/UX</span>
+                </div>
+                <p class="contribution">Chandana oversees the project, ensuring the impressive UI/UX layout with dynamic website experience creation.</p>
+            </div>
+        </div>
+    </section>
+    
+    <%- include('./partials/footer') %>
+    <script>
+        // JavaScript for interactivity
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px)';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

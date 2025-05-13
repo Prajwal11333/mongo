@@ -1,0 +1,286 @@
+/* Quiz Page Styles */
+.quiz-container {
+    padding: 6rem 0;
+    min-height: calc(100vh - var(--header-height) - 300px);
+}
+
+.quiz-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 3rem;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.quiz-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.quiz-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.quiz-prompt {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: var(--radius-md);
+}
+
+.quiz-prompt h3 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+#current-prompt {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 3rem;
+}
+
+.webcam-container {
+    margin-bottom: 3rem;
+}
+
+.webcam-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+#webcam {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    display: block;
+}
+
+.webcam-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.countdown {
+    font-size: 8rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.feedback {
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feedback.correct {
+    background-color: rgba(54, 179, 126, 0.8);
+}
+
+.feedback.incorrect {
+    background-color: rgba(255, 86, 48, 0.8);
+}
+
+.feedback.visible {
+    opacity: 1;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.quiz-progress {
+    margin-top: 2rem;
+}
+
+.progress-text {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 0.8rem;
+    background-color: var(--light-gray);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progress-indicator {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    transition: width 0.3s ease;
+}
+
+.quiz-results {
+    text-align: center;
+}
+
+.results-summary {
+    margin: 3rem 0;
+}
+
+.score {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.message {
+    font-size: 2rem;
+    color: var(--text-medium);
+    margin-bottom: 2rem;
+}
+
+/* Tutorial action buttons */
+.tutorial-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.video-actions {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Quiz completion certificate */
+.quiz-certificate {
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin-top: 3rem;
+    background-color: #f9f9f9;
+    position: relative;
+    text-align: center;
+}
+
+.certificate-header {
+    margin-bottom: 2rem;
+}
+
+.certificate-title {
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.certificate-subtitle {
+    font-size: 1.6rem;
+    color: var(--text-medium);
+}
+
+.certificate-content {
+    margin-bottom: 2rem;
+}
+
+.certificate-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.certificate-description {
+    font-size: 1.4rem;
+    color: var(--text-medium);
+}
+
+.certificate-date {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+.certificate-actions {
+    margin-top: 2rem;
+}
+/* Add these improved media queries to translate.css */
+@media (max-width: 992px) {
+    .sign-item {
+      width: calc(25% - 1.5rem);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .translator-card {
+      padding: 1.5rem;
+    }
+    
+    .translate-hero h1 {
+      font-size: 2.6rem;
+    }
+    
+    .translate-hero p {
+      font-size: 1.6rem;
+    }
+    
+    .result-text {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+    
+    .sign-item {
+      width: calc(33.33% - 1rem);
+      min-width: 80px;
+    }
+    
+    .info-card {
+      padding: 1.5rem;
+    }
+    
+    .info-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    
+    .info-card li {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .sign-item {
+      width: calc(50% - 1rem);
+    }
+    
+    .language-dropdown {
+      font-size: 1.4rem;
+      padding: 0.8rem;
+    }
+    
+    .controls button {
+      font-size: 1.4rem;
+      padding: 0.8rem 1.6rem;
+    }
+  }

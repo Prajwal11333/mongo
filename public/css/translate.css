@@ -1,0 +1,356 @@
+/* Translation Page Styles */
+.translate-hero {
+    background: linear-gradient(135deg, #4A6FFF 0%, #2E5DFE 100%);
+    color: var(--white);
+    padding: 12rem 0 6rem;
+    text-align: center;
+}
+
+.translate-hero h1 {
+    color: var(--white);
+    font-size: 3.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.translate-hero p {
+    font-size: 1.8rem;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.translator-container {
+    padding: 5rem 0;
+    min-height: calc(100vh - var(--header-height) - 300px);
+}
+
+.translator-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 3rem;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.translator-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.translator-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.translator-header p {
+    font-size: 1.6rem;
+    color: var(--text-medium);
+}
+
+.input-output-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.webcam-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.webcam-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+}
+
+#webcam {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    display: block;
+}
+
+.webcam-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.countdown {
+    font-size: 8rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.recording-indicator {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    background-color: rgba(255, 0, 0, 0.6);
+    color: white;
+    display: none;
+}
+
+.recording-indicator.visible {
+    display: block;
+}
+
+.controls {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.translation-result {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.language-selector {
+    margin-bottom: 2rem;
+}
+
+.language-selector label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+}
+
+.language-dropdown {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-md);
+    font-size: 1.6rem;
+    color: var(--text-dark);
+}
+
+.result-display {
+    background-color: var(--light-gray);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.detected-sign, .translated-text {
+    margin-bottom: 2rem;
+}
+
+.detected-sign h3, .translated-text h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.result-text {
+    font-size: 2.4rem;
+    font-weight: 700;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.translation {
+    color: var(--primary-color);
+}
+
+.confidence-level {
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+    color: var(--text-medium);
+    text-align: center;
+}
+
+.translation-history {
+    background-color: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+}
+
+.translation-history h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 15rem;
+    overflow-y: auto;
+}
+
+.history-list li {
+    padding: 1rem;
+    border-bottom: 1px solid var(--medium-gray);
+    font-size: 1.4rem;
+}
+
+.history-list li:last-child {
+    border-bottom: none;
+}
+
+.history-list .sign {
+    font-weight: 600;
+}
+
+.history-list .time {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+.translation-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--light-gray);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+}
+
+.info-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.info-card ol {
+    padding-left: 2rem;
+}
+
+.info-card li {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-medium);
+}
+
+.supported-signs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.sign-item {
+    text-align: center;
+    width: calc(20% - 1.5rem);
+    min-width: 100px;
+}
+
+.sign-item img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin-bottom: 0.8rem;
+}
+
+.sign-item p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.danger-btn {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+.danger-btn:hover {
+    background-color: #e53935;
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Add these improved media queries to translate.css */
+@media (max-width: 992px) {
+    .sign-item {
+      width: calc(25% - 1.5rem);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .translator-card {
+      padding: 1.5rem;
+    }
+    
+    .translate-hero h1 {
+      font-size: 2.6rem;
+    }
+    
+    .translate-hero p {
+      font-size: 1.6rem;
+    }
+    
+    .result-text {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+    
+    .sign-item {
+      width: calc(33.33% - 1rem);
+      min-width: 80px;
+    }
+    
+    .info-card {
+      padding: 1.5rem;
+    }
+    
+    .info-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    
+    .info-card li {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .sign-item {
+      width: calc(50% - 1rem);
+    }
+    
+    .language-dropdown {
+      font-size: 1.4rem;
+      padding: 0.8rem;
+    }
+    
+    .controls button {
+      font-size: 1.4rem;
+      padding: 0.8rem 1.6rem;
+    }
+  }

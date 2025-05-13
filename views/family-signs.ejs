@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/css/style2.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+        <div class="main">
+            <% if(locals.videos){ %>
+                <div class="anchor">
+                    <video width="800" height="480" controls autoplay>
+                        <source src="<%= videos.video %>" type="video/mp4">
+                    </video>
+                    <h2>
+                        <%= videos.title %>
+                    </h2>
+                </div>
+                <% } %>
+                    <div class="basic">
+                        <div class="section-1">
+                            <h2 class="h2">Section 1 - Family Signs</h2>
+                        </div>
+                        <div class="clicksection1">
+                            <ul class="Introdropdown1" type="none">
+                                <li class="common" data-id="004">
+                                    <input type="checkbox">
+                                    <span>Family Signs</span>
+                                </li>
+                                <li class="common" >
+                                    <input type="checkbox">
+                                    <span>quizzes</span>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    
+                </div>
+        </div>
+        <%- include('./partials/footer') %>
+            <script>
+                $(".Introdropdown1,.Introdropdown2,.Introdropdown3").hide();
+                $(".section-1").on("click", function () {
+                    $(".Introdropdown1").toggle();
+                });
+
+                $(document).ready(function () {
+                    $(".common").on("click", function () {
+                        const videoId = $(this).data("id");
+
+                        $.ajax({
+                            url: `/tutorials/family-signs/${videoId}`,
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function (data) {
+                                // Update video source and title
+                                $(".anchor video source").attr("src", data.videos.video);
+                                $(".anchor h2").text(data.videos.title);
+
+                                // Important: Need to reload the video element after changing source
+                                $(".anchor video")[0].load();
+                                $(".anchor video")[0].play();
+                            },
+                            error: function (err) {
+                                console.error("Error loading video:", err);
+                            }
+                        });
+                    });
+                });
+            </script>
+</body>
+
+</html>

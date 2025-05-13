@@ -1,0 +1,89 @@
+body{
+   margin-top : 83px;
+}
+
+.section-1 :hover  {
+    border-color: black;
+    width: 100%;
+    border: 2px;
+    height: 70px;
+    background-color:  rgba(51, 97, 237, 0.79);
+    display: flex;
+    align-items: center;
+}
+.section-2 :hover {
+    border-color: black;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(51, 97, 237, 0.79);
+    display: flex;
+    align-items: center;
+}
+.section-3 :hover {
+    border-color: black;
+    width: 100%;
+    height: 70px;
+    background-color:  rgba(51, 97, 237, 0.79);
+    display: flex;
+    align-items: center;
+    
+}
+.section-1, .section-2, .section-3 {
+    width: 100rem;
+   
+}
+
+.h2 {
+    background-color: rgba(59, 200, 225, 0.785);
+    border: 2px solid black;
+    height: 50px;
+    padding-left: 20px;
+}
+.common{
+    
+    padding: 20px;
+    border: 1px solid black ;
+    border-radius: 10px;
+
+}
+ span {
+    font-size: large;
+    
+ }
+
+ .main {
+    display: flex;
+ }
+
+
+ /* Add responsive media queries */
+ @media (max-width: 768px) {
+    .main {
+      flex-direction: column;
+    }
+    
+    .section-1, .section-2, .section-3 {
+      width: 100%;
+    }
+    
+    .h2 {
+      font-size: 1.8rem;
+      height: auto;
+      min-height: 50px;
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      margin-top: 70px;
+    }
+    
+    .common {
+      padding: 15px;
+    }
+    
+    .h2 {
+      font-size: 1.6rem;
+    }
+  }
