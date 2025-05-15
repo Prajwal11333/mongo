@@ -109,12 +109,25 @@ export const loginUser = async (req, res) => {
 // @route   GET /api/auth/logout
 // @access  Private
 export const logout = (req, res) => {
-  res.cookie('token', 'none', {
-    expires: new Date(Date.now() + 10 * 1000), // Expires in 10 seconds
-    httpOnly: true
-  });
-  
-  res.status(200).json({ message: 'User logged out successfully' });
+  try {
+    // Clear the token cookie
+    res.cookie('token', 'none', {
+      expires: new Date(Date.now() + 10 * 1000), // Expires in 10 seconds
+      httpOnly: true
+    });
+    
+    // Set a flag to show logout success message
+    res.locals.logoutSuccess = true;
+    
+    // Redirect to login page with success message
+    return res.status(200).json({ 
+      success: true,
+      message: 'User logged out successfully' 
+    });
+  } catch (error) {
+    console.error('Logout error:', error);
+    return res.status(500).json({ message: 'Server error during logout' });
+  }
 };
 
 // @desc    Get current logged in user

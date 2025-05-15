@@ -20,9 +20,16 @@
             </nav>
 
             <div class="user-menu" id="user-menu">
-                <a href="/login" class="btn login-btn" id="login-btn"  style="color: rgb(112, 157, 215); font-size: 19px;">Log In</a>
+                <% if (locals.isAuthenticated) { %>
+                    <div class="logged-in-menu">
+                        <!-- Optional: Add user name display -->
+                        <!-- <span class="user-greeting"><img src="/assets/imgs/327-3273258_logged-in-user-icon-png-transparent-png.png" alt=""></span> -->
+                        <a href="/api/auth/logout" class="btn logout-btn" id="logout-btn">Logout</a>
+                    </div>
+                <% } else { %>
+                    <a href="/login" class="btn login-btn" id="login-btn" style="color: rgb(112, 157, 215); font-size: 19px;">Log In</a>
+                <% } %>
             </div>
-            <!-- This will be shown when user is logged in (handled by JS) -->
         </div>
     </div>
 </header>

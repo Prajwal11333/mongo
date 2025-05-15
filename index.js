@@ -271,7 +271,6 @@
 // });
 
 
-
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
@@ -282,6 +281,20 @@ import { fileURLToPath } from "url";
 import connectDB from "./config/database.js";
 import authRoutes from "./routes/authroute.js";
 import { isLoggedIn } from "./middleware/auth.js";
+
+
+
+
+// const API_URL = "http://localhost:4000";
+// const PYTHON_API_URL = "http://localhost:8000"; // FastAPI backend for sign language recognition
+// const TRANSLATE_API_URL = "http://localhost:8001"; // FastAPI backend for sign language translation
+// const NUMBERS_LETTERS_API_URL = "http://localhost:8002"; // FastAPI backend for numbers and letters recognition
+
+// app.use(express.static('public'));
+
+// Increase the body size limit for JSON and URL-encoded data
+// app.use(bodyParser.json({ limit: '50mb' }));
+// app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 
 // Load environment variables
 dotenv.config();
@@ -311,7 +324,9 @@ app.use('/api/auth', authRoutes);
 
 // View Routes
 app.get("/", (req, res) => {
-    res.render('home.ejs');
+    res.render('home.ejs', {
+        logoutSuccess: req.query.logout === 'success' ? true : false
+    });
 });
 
 app.get("/tutorials", (req, res) => {
@@ -323,7 +338,11 @@ app.get("/login", (req, res) => {
     if (res.locals.isAuthenticated) {
         return res.redirect('/');
     }
-    res.render("login.ejs");
+    
+    // Check if redirected from logout
+    const logoutSuccess = req.query.logout === 'success' ? true : false;
+    
+    res.render("login.ejs", { logoutSuccess });
 });
 
 app.get("/translate", (req, res) => {
@@ -333,6 +352,7 @@ app.get("/translate", (req, res) => {
 app.get("/about", (req, res) => {
     res.render("about.ejs");
 });
+
 app.get("/community", (req, res) => {
     res.render("community.ejs");
 });
